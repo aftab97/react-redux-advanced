@@ -21,7 +21,7 @@ http://localhost:3000/people/1
 
 Packages used are Redux / Redux Thunk / Material-UI
 
-Also linked to CI/CD pipeline on AWS with multiple stages and hosted on a S3 Bitbucket,
+Also linked to CI/CD pipeline on AWS with multiple stages and hosted on a S3 Bucket,
 link provided below:
 
 [http://react-aws-ci-cd-pipeline.s3-website.us-east-2.amazonaws.com/](http://react-aws-ci-cd-pipeline.s3-website.us-east-2.amazonaws.com/)
