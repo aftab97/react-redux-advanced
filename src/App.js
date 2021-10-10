@@ -3,18 +3,36 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { requestPeoplesAction } from "./actions/requestPeoplesAction";
+import { requestProductsAction } from "./actions/requestProductsAction";
 import { DataGrid } from "@material-ui/data-grid";
 
 import { peoplesColumns } from "./utils/utils";
 import { useHistory } from "react-router";
 
-const App = ({ requestPeoplesAction, peoples, isLoading }) => {
+const App = ({
+  requestPeoplesAction,
+  requestProductsAction,
+  peoples,
+  isLoading,
+}) => {
   const history = useHistory();
+
+  const filters = {
+    subCategory: "International",
+    subSubCategory: "NONE",
+    brand: "Jolly Rancher",
+    date: -1,
+    dietary: "NONE",
+  };
+
+  const category = "/product/products/?";
 
   useEffect(() => {
     console.log("starting");
 
     requestPeoplesAction();
+    console.log("requesting products action");
+    requestProductsAction(filters, category);
   }, []);
 
   const pushHistoryRowClick = (e) => {
@@ -52,6 +70,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   requestPeoplesAction,
+  requestProductsAction,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
