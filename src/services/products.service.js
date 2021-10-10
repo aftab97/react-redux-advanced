@@ -1,8 +1,9 @@
 import _axios from "axios";
 import qs from "qs";
+import config from "../config/API";
 
 const axios = _axios.create({
-  baseURL: "https://asdasdacandykabin.co.uk/api",
+  baseURL: config.baseURL,
   headers: {
     // ...config.defaultHeaders,
   },

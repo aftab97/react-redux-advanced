@@ -1,4 +1,5 @@
 import Axios from "axios";
+import env from "../config/env";
 import ProductsService from "../services/products.service";
 
 export const REQUEST_PRODUCTS = "REQUEST_PRODUCTS";
@@ -25,6 +26,7 @@ export const requestProductsAction = (filters, category) => {
   return async (dispatch) => {
     // first step
     console.log("requesting products");
+    console.log(env);
     dispatch(requestProducts());
 
     try {
