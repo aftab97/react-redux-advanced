@@ -1,4 +1,3 @@
-# Tappit Technical Test
 
 ## Installation
 
